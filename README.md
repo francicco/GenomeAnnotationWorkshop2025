@@ -1,4 +1,4 @@
-# GenomeAnnotationWorkshop2024
+# GenomeAnnotationWorkshop2025
 An introduction to Genome Annotation of non-model organisms
 
 This is the github repo for the the Genome Annotation Workshop The workshop is focused on annotating genomes of non-model organisms using a custom pipeline of multiple tools.
