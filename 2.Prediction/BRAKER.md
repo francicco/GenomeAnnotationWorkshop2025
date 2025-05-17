@@ -11,6 +11,19 @@ This section will deal with mapping proteins from closely related species of you
 In this example, you will use proteins from `Swiss prot DB`, and you will map that with `miniprot`.
 The mapper is very fast and can provide multiple types of output. Execute `miniprot -h` to check.
 
+If you haven't done it already you can download the fasta file:
+```bash
+wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+```
+
+Move `uniprot_sprot.fasta.gz` to your `$DATADIR` and unpack the `gz` file:
+```bash
+cp uniprot_sprot.fasta.gz $DATADIR
+gunzip uniprot_sprot.fasta.gz
+```
+Also, there is a version in `$DATADIR`.
+
+
 For example the parameter `-G` controls the expected size of the longest introns, you need to adjust accordingly to your genome. One way to check the results is to load the output on `IGV` and check in the different maps have too much overlap or not enough coding exons.
 ```bash
 miniprot --aln --gff --trans -t $THREADS --trans -G 50000 $CHR $SWISSPROTDB.fasta > $SPECIES.MiniProt.gff
@@ -80,21 +93,10 @@ Alternatively you can use `compleasm`:
 compleasm protein -t$THREADS -l $BUSCODB -p braker_utr.aa.fasta -o $SPECIES.BrakerAA.Busco.$BUSCODB
 ```
 
-Let's have a look at the fragmentation of the genes! One way to do it would be to blast our set of proteins to a reference DB and check the distribution of alignment. For this we can you uniprot. If you haven't done it already you can download the fasta file:
+Let's have a look at the fragmentation of the genes! One way to do it would be to blast our set of proteins to a reference DB and check the distribution of alignment.
+First we have to build the index for `diamond` using the subcommand `makedb`.
 ```bash
-wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
-```
-
-Move `uniprot_sprot.fasta.gz` to your `$DATADIR` and unpack the `gz` file:
-```bash
-cp uniprot_sprot.fasta.gz $DATADIR
-cd $DATADIR
-gunzip uniprot_sprot.fasta.gz
-```
-
-Now we have to build the index for `diamond` using the subcommand `makedb`.
-```bash
-diamond makedb --in uniprot_sprot.fasta --db uniprot_sprot
+diamond makedb --in $SWISSPROTDB.fasta --db $SWISSPROTDB
 ```
 
 Now we are ready to `blastp` our proteome.
