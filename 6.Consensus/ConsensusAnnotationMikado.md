@@ -46,8 +46,8 @@ And let's credte `Mikado.conf`
 ```bash	
 echo -e "$BRAKERGTF\tbr\tTrue\t3" > Mikado.conf
 echo -e "$SPECIES.RNA.$CHRNAME.stringtie.out.gtf\tst\tFalse\t1" >> Mikado.conf
-echo -e "$SPECIES.RNA.$CHRNAME.stringtie+BRAKER.out.gtf\tstbr\ttFalse\t1" >> Mikado.conf
-echo -e "$SPECIES.RNA.$CHRNAME.scallop.out.gtf\tscal\ttFalse\t1" >> Mikado.conf
+echo -e "$SPECIES.RNA.$CHRNAME.stringtie+BRAKER.out.gtf\tstbr\tFalse\t1" >> Mikado.conf
+echo -e "$SPECIES.RNA.$CHRNAME.scallop.out.gtf\tscal\tFalse\t1" >> Mikado.conf
 echo -e "$SPECIES.lonrRNA.$CHRNAME.stringtie.out.gtf\tstLR\tFalse\t1" >> Mikado.conf 
 echo -e "$SPECIES.RNA.$CHRNAME.isoquant.out.gff3\tisoq\tTrue\t3" >> Mikado.conf
 echo -e "$SPECIES.minimap2.Trinity.gff3\tTrin\tFalse\t-1" >> Mikado.conf 
