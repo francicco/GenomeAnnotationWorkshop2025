@@ -28,3 +28,8 @@ The workshop is divided into four section
 All data is available at this [link](https://drive.google.com/drive/folders/1IreMRHaOa1kvOomyjoEm8xFw1fmOR-oK?usp=drive_link), but don't forget to [set up your environment](https://github.com/francicco/GenomeAnnotationWorkshop2024/blob/main/0.VariableSetting.md)!!! There is a conda env that has most of the tools, you can activate it with `conda activate annotation25`
 
 ## I hope this will be useful, Have fun!
+
+P.S. If you want to download the data directly to your machine from the link you need the python libray `gdown`. If it's not installed you can do it with `pip install gdown --user`.
+
+Then simply execute: `gdown --folder https://drive.google.com/drive/folders/1IreMRHaOa1kvOomyjoEm8xFw1fmOR-oK`
+
