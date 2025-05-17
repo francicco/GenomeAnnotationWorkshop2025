@@ -33,3 +33,4 @@ P.S. If you want to download the data directly to your machine from the link you
 
 Then simply execute: `gdown --folder https://drive.google.com/drive/folders/1IreMRHaOa1kvOomyjoEm8xFw1fmOR-oK`
 
+For this workshop all the data should be in `~/Share`
