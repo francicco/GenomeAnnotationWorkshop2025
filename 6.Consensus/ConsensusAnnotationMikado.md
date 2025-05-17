@@ -52,6 +52,10 @@ echo -e "$SPECIES.lonrRNA.$CHRNAME.stringtie.out.gtf\tstLR\tFalse\t1" >> Mikado.
 echo -e "$SPECIES.RNA.$CHRNAME.isoquant.out.gff3\tisoq\tTrue\t3" >> Mikado.conf
 echo -e "$SPECIES.minimap2.Trinity.gff3\tTrin\tFalse\t-1" >> Mikado.conf 
 ```	
+...And check they are all there...
+```bash
+cut -f1 Mikado.conf | while read ann; do ls -l $ann; done
+```
 
 Now we can run `mikado configure`, to note here is the addition of the annotated splice-sites `portcullis.0.5.pass.junctions.bed`, and the proteome `${SWISSPROTDB}.fasta` that will be used by `Mikado` to check for chimeras and ORFs.
 Another important feature in `Mikado` is the scoring file a [`yaml` formatted file](https://spacelift.io/blog/yaml), which is key to `Mikado`. The scoring file is a [user-defined configuration file](https://mikado.readthedocs.io/en/stable/Scoring_files/) that is used by `Mikado` to filter the annotations and to reject or accept transcript.
