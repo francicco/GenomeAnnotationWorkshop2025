@@ -101,7 +101,7 @@ gzip mikado.diamond.xml
 ## 3. Finally, `pick` will integrate the data with the positional and structural data present in the `GTF` file to select the best transcript models.
 But before `pick`, let's covert all into a `SQLite` database...
 ```bash
-mikado serialise -p $THREADS --json-conf configuration.yaml --xml mikado.blast.xml.gz --orfs mikado_prepared.fasta.transdecoder.bed
+mikado serialise -p $THREADS --json-conf configuration.yaml --xml mikado.diamond.xml.gz --orfs mikado_prepared.fasta.transdecoder.bed
 ```
 
 ...and run `pick`!
