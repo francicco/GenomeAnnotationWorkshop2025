@@ -63,7 +63,7 @@ There's no ideal scoring system, and depending on the need or the genomic proper
 **There's no right or wrong, there is trial and error!**
 
 ```bash
-mikado configure --list Mikado.conf --scoring insects.yaml --reference $CHR --codon-table 0 \
+mikado configure --list Mikado.conf --scoring $MIKADOSCORE --reference $CHR --codon-table 0 \
 	--junctions portcullis.0.5.pass.junctions.bed -bt ${SWISSPROTDB}.fasta configuration.yaml
 ```
 
