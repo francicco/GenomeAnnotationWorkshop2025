@@ -31,6 +31,7 @@ All data is available at this [link](https://drive.google.com/drive/folders/1Ire
 
 P.S. If you want to download the data directly to your machine from the link you need the python libray `gdown`. If it's not installed you can do it with `pip install gdown --user`.
 
-Then simply execute: `gdown --folder https://drive.google.com/drive/folders/1IreMRHaOa1kvOomyjoEm8xFw1fmOR-oK`
+Then simply execute: `gdown --folder https://drive.google.com/drive/folders/1IreMRHaOa1kvOomyjoEm8xFw1fmOR-oK`.
+To download a specific file use the flag `--fuzzy`.
 
-For this workshop all the data should be in `~/Share`
+For this workshop all the data should be in `~/Share`.
