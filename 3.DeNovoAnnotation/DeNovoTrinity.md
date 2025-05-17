@@ -30,7 +30,7 @@ Trinity --max_memory 150G --seqType fq --left $SRA1 --right $SRA2 --CPU $THREADS
 ### Checking `Trinity` output:
 Once you have your reconstructed transcripts you can map them with `minimap2`, making sure to convert the output in a `bed` file. You can use `|` to combine multiple commands:
 ```bash
-minimap2 -ax splice:hq -C5 -t $THREADS $CHR $DATADIR/$SPECIES.Trinity.fasta.gz | samtools sort - | \
+minimap2 -ax splice -C5 -t $THREADS $CHR $DATADIR/$SPECIES.Trinity.fasta.gz | samtools sort - | \
 	samtools view -b -h -@ $THREADS - | bedtools bamtobed -bed12 -i - | awk '{ if ( $10 > 1 ) print $0 }' | awk '{ $4 = $4"."NR; print }' | sed 's/ /\t/g' > $SPECIES.minimap2.Trinity.bed
 ```
 
