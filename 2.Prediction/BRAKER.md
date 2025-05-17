@@ -26,7 +26,7 @@ Miniprot2SplicedNucl.py -g $SPECIES.MiniProt.gff > $SPECIES.MiniProt.nt.fasta
 
 Now run `minimap2`:
 ```bash
-minimap2 -t $THREADS -ax splice:hq $CHR $SPECIES.MiniProt.nt.fasta > $SPECIES.MiniProt.nt.sam
+minimap2 -t $THREADS -ax splice $CHR $SPECIES.MiniProt.nt.fasta > $SPECIES.MiniProt.nt.sam
 ```
 
 Convert the `sam` into a `psl`:
