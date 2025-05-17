@@ -52,13 +52,15 @@ You can also manually link these paths to `BRAKER` using specific flags like `--
 
 Now run `BRAKER`:
 ```bash
-braker.pl --UTR=on --threads $THREADS \
+braker.pl --threads $THREADS \
   --workingdir=. --alternatives-from-evidence=true --crf \
   --nocleanup --species=${SPECIES}_$CHRNAME --softmasking \
   --genome=$CHR --gff3 --hints=$SPECIES.MiniProt.hints.gff \
   --AUGUSTUS_ab_initio -grass --verbosity=4 \
   --bam=$SPECIES.RNA.$CHRNAME.Aligned.sortedByCoord.out.bam 
 ```
+
+Note: you can attempt to use `--UTR=on` or `--addUTR=on`, in some version they suggest not to use it... 
 
 Now the run has finished you can check the quality of it, for example asking if enough core genes (`BUSCO`) have been predicted and if there's room for improvement.
 Running `BUSCO` on the genome AND on the annotation can give you an idea how efficient the annotation method you're using is performing. In theory you want to approach the values found with `BUSCO -m genome`
