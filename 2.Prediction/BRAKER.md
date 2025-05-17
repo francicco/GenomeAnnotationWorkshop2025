@@ -75,6 +75,11 @@ gffread $BRAKERGTF -g $CHR -y braker_utr.aa.fasta
 busco -f -i braker_utr.aa.fasta --cpu $THREADS -m prot -l $BUSCODIR/$BUSCODB --out run_braker_utr.aa.$BUSCODB 
 ```
 
+Alternatively you can use `compleasm`:
+```bash
+compleasm protein -t$THREADS -l $BUSCODB -p braker_utr.aa.fasta -o $SPECIES.BrakerAA.Busco.$BUSCODB
+```
+
 Let's have a look at the fragmentation of the genes! One way to do it would be to blast our set of proteins to a reference DB and check the distribution of alignment. For this we can you uniprot. If you haven't done it already you can download the fasta file:
 ```bash
 wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
