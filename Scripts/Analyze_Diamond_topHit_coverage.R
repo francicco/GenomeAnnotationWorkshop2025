@@ -20,7 +20,7 @@ AlnFrac <- read_tsv(input_file, col_names = TRUE) %>%
 head(AlnFrac)
 
 Density_plot <- ggplot(AlnFrac, aes(pct_hit_len_aligned, after_stat(count), color = Annotation, linetype = Annotation)) +
-  geom_density(size=0.3) +
+  geom_density(linewidth=0.3) +
   scale_x_reverse() +
   labs(title=paste('UniProt comparison'),
        x='Percentage of AA length aligned', y='Count') 
