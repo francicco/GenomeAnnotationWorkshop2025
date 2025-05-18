@@ -113,6 +113,7 @@ analyze_blastPlus_topHit_coverage.pl braker_utr.aa.out.outfmt6 braker_utr.aa.fas
 sed 's/^/Braker\t/' braker_utr.aa.out.outfmt6.w_pct_hit_length > braker_utr.aa.out.outfmt6.w_pct_hit_length.tsv
 sed -i '1s/^Braker\t#/#Annotation\t/' braker_utr.aa.out.outfmt6.w_pct_hit_length.tsv
 ```
+Note: you can also try with `AnalyseTopHitCoverage.py` if give extra columns: `pct_query_len_aligned`, `pct_aln_ratio_q_t`.
 
 In case you already have a reference annotation you can compare it with the `BRAKER` output, to see how the analysis performed.
 In normal circumstances, you won't have an annotation. So in this case we're using this step to show you the limitations of each step of the pipeline.
