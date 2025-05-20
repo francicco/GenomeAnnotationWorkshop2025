@@ -26,7 +26,7 @@ Also, there is a version in `$DATADIR`.
 
 For example the parameter `-G` controls the expected size of the longest introns, you need to adjust accordingly to your genome. One way to check the results is to load the output on `IGV` and check in the different maps have too much overlap or not enough coding exons.
 ```bash
-miniprot --aln --gff --trans -t $THREADS --trans -G 50000 $CHR $SWISSPROTDB.fasta > $SPECIES.MiniProt.gff
+miniprot --aln --gff --trans -t $THREADS -G 50000 $CHR $SWISSPROTDB.fasta > $SPECIES.MiniProt.gff
 ```
 
 Once you are satisfied with your mapping you can start to convert the mapping into a `gff` format file and use it as input in `BRAKER`.
