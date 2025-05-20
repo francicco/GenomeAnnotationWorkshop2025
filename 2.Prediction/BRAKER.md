@@ -96,14 +96,14 @@ compleasm protein -t$THREADS -l $BUSCODB -p braker_utr.aa.fasta -o $SPECIES.Brak
 Let's have a look at the fragmentation of the genes! One way to do it would be to blast our set of proteins to a reference DB and check the distribution of alignment.
 First we have to build the index for `diamond` using the subcommand `makedb`.
 ```bash
-diamond makedb --in $SWISSPROTDB.fasta --db $SWISSPROTDB
+diamond makedb --in $SWISSPROTDB.fasta --db ./uniprot_sprot
 ```
 
 Now we are ready to `blastp` our proteome.
 ```bash
 sed -i.BK 's/\.$//' braker_utr.aa.fasta
 
-diamond blastp  --ultra-sensitive --max-target-seqs 1 --threads $THREADS --query braker_utr.aa.fasta --outfmt 6 --db ${SWISSPROTDB} \
+diamond blastp  --ultra-sensitive --max-target-seqs 1 --threads $THREADS --query braker_utr.aa.fasta --outfmt 6 --db ./uniprot_sprot \
 	--evalue 1e-5 --out braker_utr.aa.out.outfmt6
 ```
 
