@@ -103,7 +103,7 @@ Now we are ready to `blastp` our proteome.
 ```bash
 sed -i.BK 's/\.$//' braker_utr.aa.fasta
 
-diamond blastp  --ultra-sensitive --max-target-seqs 1 --threads $THREADS --query braker_utr.aa.fasta --outfmt 6 --db ./uniprot_sprot \
+diamond blastp  --ultra-sensitive --max-target-seqs 1 --threads $THREADS --query braker_utr.aa.fasta --outfmt 6 --db $SWISSPROTDB \
 	--evalue 1e-5 --out braker_utr.aa.out.outfmt6
 ```
 
