@@ -115,7 +115,9 @@ Wait! `pick` has five different modes: `nosplit`, `stringent`, `lenient`, `permi
 Now *pick* the one you like... or check for differences!
 ```bash
 MODE=split
-mikado pick --mode $MODE --prefix $SPECIES -p $THREADS --json-conf configuration.yaml --subloci-out mikado.subloci.out.gff3 --output-dir $SPECIES.Mikado.$MODE
+mikado pick --mode $MODE --prefix $SPECIES -p $THREADS --json-conf configuration.yaml \
+	--scoring-file $MIKADOSCORE \
+	--subloci-out mikado.subloci.out.gff3 --output-dir $SPECIES.Mikado.$MODE
 ```
 
 ## Now that you concluded the pipeline you can have a look at the results
